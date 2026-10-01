@@ -9,6 +9,8 @@
  */
 return [
     'debug' => false,
-    'panel' => ['install' => true],
+    'content.salt' => getenv('KIRBY_CONTENT_SALT') ?: null,
+    'cookie.key'   => getenv('KIRBY_COOKIE_KEY') ?: null,
+    'panel' => ['install' => true, 'vue' => ['compiler' => false]],
     'yaml.handler' => 'symfony', // already makes use of the more modern Symfony YAML parser: https://getkirby.com/docs/reference/system/options/yaml (will become the default in a future Kirby version)
 ];
